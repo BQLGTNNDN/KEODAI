@@ -3,15 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>
-    DỰ ÁN TRỌNG ĐIỂM | Ban QLDA Giao thông & Nông nghiệp Đà Nẵng
-  </title>
+  <title>THEO DÕI DỰ ÁN KÉO DÀI, LÃNG PHÍ | Ban QLDA Giao thông & Nông nghiệp Đà Nẵng</title>
 
   <style>
-
     /* =====================================================
-       RESET
+       RESET & BASE STYLES
     ===================================================== */
     * {
       margin: 0;
@@ -19,633 +15,580 @@
       box-sizing: border-box;
     }
 
-    html,
-    body {
+    html, body {
       width: 100%;
       height: 100%;
-
-      overflow: hidden;
-
-      font-family:
-        "Segoe UI",
-        system-ui,
-        Arial,
-        sans-serif;
-
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
       background: #e8ecf1;
+      color: #1e293b;
+      overflow: hidden;
     }
 
-
-    /* =====================================================
-       APP - KHUNG TOÀN BỘ TRANG
-    ===================================================== */
     .app {
       width: 100%;
       height: 100vh;
-
       display: flex;
       flex-direction: column;
-
       overflow: hidden;
     }
 
-
     /* =====================================================
-       HEADER
+       HEADER (XANH CHUẨN #0661B6 & LOGO)
     ===================================================== */
     .topbar {
-
       width: 100%;
-
       height: 56px;
       min-height: 56px;
-
       background: #0661B6;
-
       padding: 0 24px;
-
       display: flex;
       align-items: center;
       justify-content: space-between;
-
       flex-shrink: 0;
-
-      box-shadow:
-        0 2px 8px rgba(0,0,0,.18);
-
+      box-shadow: 0 2px 8px rgba(0,0,0,.18);
       position: relative;
       z-index: 10;
     }
 
-
-    /* =====================================================
-       LOGO + BRAND
-    ===================================================== */
     .brand {
-
       display: flex;
       align-items: center;
-
       gap: 12px;
-
       min-width: 0;
     }
 
-
     .seal {
-
       width: 42px;
       height: 42px;
-
       border-radius: 50%;
-
       overflow: hidden;
-
       background: #ffffff;
-
       display: flex;
       align-items: center;
       justify-content: center;
-
       flex-shrink: 0;
-
-      border:
-        2px solid rgba(255,255,255,.75);
-
-      box-shadow:
-        0 1px 5px rgba(0,0,0,.25);
+      border: 2px solid rgba(255,255,255,.75);
+      box-shadow: 0 1px 5px rgba(0,0,0,.25);
     }
 
-
     .seal img {
-
       width: 100%;
       height: 100%;
-
       object-fit: contain;
-
       display: block;
     }
 
-
-    /* =====================================================
-       BRAND TEXT
-    ===================================================== */
     .brand-txt {
       min-width: 0;
     }
 
-
     .brand-txt strong {
-
       display: block;
-
       font-size: 13px;
-
       font-weight: 700;
-
       color: #ffffff;
-
       line-height: 1.25;
-
       white-space: nowrap;
-
       letter-spacing: .15px;
     }
 
-
     .brand-txt span {
-
       display: block;
-
       margin-top: 2px;
-
       font-size: 10px;
-
       color: rgba(255,255,255,.78);
-
       line-height: 1.2;
-
       white-space: nowrap;
     }
 
-
-    /* =====================================================
-       HEADER RIGHT
-    ===================================================== */
     .topbar-right {
-
       display: flex;
       align-items: center;
-
       gap: 10px;
-
       flex-shrink: 0;
     }
 
-
-    .badge {
-
+    .badge, .date {
       display: inline-flex;
       align-items: center;
-
       height: 27px;
-
       padding: 0 12px;
-
       font-size: 10px;
-
       font-weight: 600;
-
       color: #ffffff;
-
-      background:
-        rgba(255,255,255,.14);
-
-      border:
-        1px solid rgba(255,255,255,.25);
-
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.25);
       border-radius: 15px;
-
       white-space: nowrap;
     }
-
-
-    .date {
-
-      display: inline-flex;
-      align-items: center;
-
-      height: 27px;
-
-      padding: 0 12px;
-
-      font-size: 10px;
-
-      color: #ffffff;
-
-      background:
-        rgba(255,255,255,.10);
-
-      border:
-        1px solid rgba(255,255,255,.20);
-
-      border-radius: 15px;
-
-      white-space: nowrap;
-    }
-
 
     /* =====================================================
-       DASHBOARD AREA
-       TỰ ĐỘNG ĂN PHẦN CÒN LẠI GIỮA HEADER + FOOTER
+       MAIN WRAPPER & KPI CARDS
     ===================================================== */
     .main-wrap {
-
       width: 100%;
-
       flex: 1 1 auto;
-
       min-height: 0;
-
-      padding: 6px 8px 6px 8px;
-
+      padding: 10px 14px;
       background: #e8ecf1;
-
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
       overflow: hidden;
     }
 
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .kpi-card {
+      background: #ffffff;
+      padding: 10px 14px;
+      border-radius: 8px;
+      box-shadow: 0 1px 6px rgba(0,0,0,.06);
+      border-left: 4px solid #0661B6;
+    }
+
+    .kpi-card.green { border-left-color: #16a34a; }
+    .kpi-card.amber { border-left-color: #d97706; }
+    .kpi-card.red { border-left-color: #dc2626; }
+
+    .kpi-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #64748b;
+      text-transform: uppercase;
+    }
+
+    .kpi-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0661B6;
+      margin-top: 3px;
+    }
+
+    .kpi-card.green .kpi-value { color: #16a34a; }
+    .kpi-card.amber .kpi-value { color: #d97706; }
+    .kpi-card.red .kpi-value { color: #dc2626; }
 
     /* =====================================================
-       IFRAME CONTAINER
+       DASHBOARD CARD & TABLE AREA
     ===================================================== */
-    .iframe-container {
-
-      position: relative;
-
-      width: 100%;
-      height: 100%;
-
+    .dashboard-card {
+      flex: 1 1 auto;
+      min-height: 0;
       background: #ffffff;
-
       border-radius: 8px;
-
+      box-shadow: 0 2px 14px rgba(0,0,0,.08);
+      display: flex;
+      flex-direction: column;
       overflow: hidden;
-
-      box-shadow:
-        0 2px 14px rgba(0,0,0,.08);
+      padding: 12px;
     }
 
+    .toolbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      gap: 10px;
+      flex-shrink: 0;
+      flex-wrap: wrap;
+    }
 
-    .iframe-container iframe {
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      flex: 1;
+    }
 
-      position: absolute;
+    .toolbar input, .toolbar select {
+      padding: 7px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 12px;
+      outline: none;
+      background: #f8fafc;
+      color: #1e293b;
+    }
 
-      top: 0;
-      left: 0;
+    .toolbar input {
+      width: 340px;
+      max-width: 100%;
+    }
 
+    .toolbar select {
+      min-width: 200px;
+      cursor: pointer;
+    }
+
+    .toolbar input:focus, .toolbar select:focus {
+      border-color: #0661B6;
+      background: #ffffff;
+    }
+
+    .sync-status {
+      font-size: 11px;
+      color: #475569;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+    }
+
+    .dot-live {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #16a34a;
+      display: inline-block;
+    }
+
+    .table-scroll {
+      flex: 1 1 auto;
+      overflow: auto;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+    }
+
+    table {
       width: 100%;
-      height: 100%;
-
-      border: 0;
-
-      display: block;
+      border-collapse: collapse;
+      min-width: 2100px;
+      font-size: 12px;
     }
 
+    thead th {
+      background: #0661B6;
+      color: #ffffff;
+      font-weight: 600;
+      padding: 8px;
+      border: 1px solid rgba(255,255,255,.25);
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      text-align: center;
+    }
+
+    thead tr:nth-child(2) th {
+      top: 34px;
+      background: #05529c;
+    }
+
+    tbody td {
+      padding: 8px;
+      border: 1px solid #e2e8f0;
+      vertical-align: top;
+      line-height: 1.45;
+      color: #1e293b;
+      white-space: pre-line;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    tbody tr:hover {
+      background: #f1f5f9;
+    }
+
+    .text-center { text-align: center; }
+    .text-right { text-align: right; }
+    .font-bold { font-weight: 600; }
+
+    .tag-leader {
+      display: inline-block;
+      background: #e0f2fe;
+      color: #0369a1;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 11px;
+      white-space: nowrap;
+    }
 
     /* =====================================================
        FOOTER
     ===================================================== */
     .footer {
-
       width: 100%;
-
       height: 28px;
       min-height: 28px;
-
       background: #0661B6;
-
       color: rgba(255,255,255,.92);
-
       display: flex;
-
       align-items: center;
       justify-content: center;
-
       padding: 0 12px;
-
       font-size: 9px;
-
       font-weight: 500;
-
       letter-spacing: .1px;
-
       white-space: nowrap;
-
       overflow: hidden;
       text-overflow: ellipsis;
-
       flex-shrink: 0;
     }
 
-
     /* =====================================================
-       TABLET
+       RESPONSIVE DESIGN
     ===================================================== */
+    @media (max-width: 900px) {
+      .kpi-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
     @media (max-width: 768px) {
-
-      .topbar {
-
-        height: 50px;
-        min-height: 50px;
-
-        padding: 0 14px;
-      }
-
-
-      .seal {
-
-        width: 34px;
-        height: 34px;
-      }
-
-
-      .brand {
-
-        gap: 9px;
-      }
-
-
-      .brand-txt strong {
-
-        font-size: 11px;
-
-        max-width: 230px;
-
-        overflow: hidden;
-
-        text-overflow: ellipsis;
-      }
-
-
-      .brand-txt span {
-        display: none;
-      }
-
-
-      .badge {
-
-        height: 24px;
-
-        padding: 0 9px;
-
-        font-size: 9px;
-      }
-
-
-      .date {
-
-        height: 24px;
-
-        padding: 0 9px;
-
-        font-size: 9px;
-      }
-
-
-      .main-wrap {
-
-        padding: 4px;
-      }
-
-
-      .iframe-container {
-
-        border-radius: 6px;
-      }
-
-
-      .footer {
-
-        height: 26px;
-        min-height: 26px;
-
-        font-size: 8px;
-      }
+      .topbar { height: 50px; min-height: 50px; padding: 0 14px; }
+      .seal { width: 34px; height: 34px; }
+      .brand { gap: 9px; }
+      .brand-txt strong { font-size: 11px; max-width: 220px; overflow: hidden; text-overflow: ellipsis; }
+      .brand-txt span { display: none; }
+      .badge, .date { height: 24px; padding: 0 9px; font-size: 9px; }
+      .main-wrap { padding: 6px; }
+      .footer { height: 26px; min-height: 26px; font-size: 8px; }
     }
 
-
-    /* =====================================================
-       MOBILE
-    ===================================================== */
     @media (max-width: 480px) {
-
-      .topbar {
-
-        height: 46px;
-        min-height: 46px;
-
-        padding: 0 10px;
-      }
-
-
-      .seal {
-
-        width: 30px;
-        height: 30px;
-      }
-
-
-      .brand {
-
-        gap: 7px;
-      }
-
-
-      .brand-txt strong {
-
-        font-size: 10px;
-
-        max-width: 145px;
-      }
-
-
-      .brand-txt span {
-        display: none;
-      }
-
-
-      .badge {
-        display: none;
-      }
-
-
-      .date {
-
-        height: 22px;
-
-        padding: 0 8px;
-
-        font-size: 9px;
-      }
-
-
-      .main-wrap {
-
-        padding: 3px;
-      }
-
-
-      .iframe-container {
-
-        border-radius: 5px;
-      }
-
-
-      .footer {
-
-        height: 24px;
-        min-height: 24px;
-
-        font-size: 7.5px;
-      }
+      .topbar { height: 46px; min-height: 46px; padding: 0 10px; }
+      .seal { width: 30px; height: 30px; }
+      .brand { gap: 7px; }
+      .brand-txt strong { font-size: 10px; max-width: 140px; }
+      .badge { display: none; }
+      .kpi-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+      .kpi-value { font-size: 15px; }
+      .footer { height: 24px; min-height: 24px; font-size: 7.5px; }
     }
-
-
-    /* =====================================================
-       VERY SMALL MOBILE
-    ===================================================== */
-    @media (max-width: 360px) {
-
-      .brand-txt strong {
-
-        max-width: 120px;
-      }
-
-
-      .date {
-
-        font-size: 8px;
-
-        padding: 0 6px;
-      }
-
-
-      .footer {
-
-        font-size: 7px;
-      }
-    }
-
   </style>
 </head>
 
-
 <body>
-
-
   <div class="app">
 
-
-    <!-- ===================================================
-         HEADER
-    ==================================================== -->
+    <!-- HEADER -->
     <header class="topbar">
-
       <div class="brand">
-
         <div class="seal">
-
-          <img
-            src="logobgtnn.png"
-            alt="Logo Ban QLDA Giao thông và Nông nghiệp Đà Nẵng"
-          >
-
+          <img src="logobgtnn.png" alt="Logo Ban QLDA Giao thông và Nông nghiệp Đà Nẵng">
         </div>
-
-
         <div class="brand-txt">
-
-          <strong>
-            BAN QUẢN LÝ DỰ ÁN ĐẦU TƯ XÂY DỰNG CÁC CÔNG TRÌNH GIAO THÔNG VÀ NÔNG NGHIỆP ĐÀ NẴNG
-          </strong>
-
-          <span>
-            HỆ THỐNG DỮ LIỆU BÁO CÁO DỰ ÁN TRỌNG ĐIỂM THÀNH PHỐ · 2026
-          </span>
-
+          <strong>BAN QUẢN LÝ DỰ ÁN ĐẦU TƯ XÂY DỰNG CÁC CÔNG TRÌNH GIAO THÔNG VÀ NÔNG NGHIỆP ĐÀ NẴNG</strong>
+          <span>THEO DÕI NHIỆM VỤ TẠI TB 561/TB-UBND &amp; TB 690/TB-UBND · DỰ ÁN KÉO DÀI, LÃNG PHÍ</span>
         </div>
-
       </div>
-
 
       <div class="topbar-right">
-
-        <span class="badge">
-          📊 KH 2026
-        </span>
-
-        <span
-          class="date"
-          id="currentDate"
-        >
-          --
-        </span>
-
+        <span class="badge">📋 TB 561 &amp; TB 690</span>
+        <span class="date" id="currentDate">--</span>
       </div>
-
     </header>
 
-
-
-    <!-- ===================================================
-         DASHBOARD
-    ==================================================== -->
+    <!-- MAIN DASHBOARD -->
     <main class="main-wrap">
-
-      <div class="iframe-container">
-
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSOaQx-Yk_pAMaV-IJ8Yzi-AemSxyzgnZFlMl2rIlgNdLZ4dCotd8gQyWOKM7eu9g9dDy6TO5eL_omZ/pubhtml?gid=0&amp;single=true&amp;widget=true&amp;headers=false"></iframe>
-
+      <!-- 4 THẺ CHỈ SỐ KPI -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Tổng số dự án theo dõi</div>
+          <div class="kpi-value" id="kpi-total">--</div>
+        </div>
+        <div class="kpi-card green">
+          <div class="kpi-label">Tổng mức đầu tư (tỷ đồng)</div>
+          <div class="kpi-value" id="kpi-tmdt">--</div>
+        </div>
+        <div class="kpi-card amber">
+          <div class="kpi-label">Dự án có vướng mắc</div>
+          <div class="kpi-value" id="kpi-vuongmac">--</div>
+        </div>
+        <div class="kpi-card red">
+          <div class="kpi-label">Lãnh đạo Ban phụ trách</div>
+          <div class="kpi-value" id="kpi-leaders">--</div>
+        </div>
       </div>
 
+      <!-- BẢNG DỮ LIỆU CHI TIẾT 12 CỘT -->
+      <div class="dashboard-card">
+        <div class="toolbar">
+          <div class="filter-group">
+            <input type="text" id="searchInput" placeholder="🔍 Tìm tên dự án, nhiệm vụ, vướng mắc, đề xuất...">
+            <select id="leaderFilter">
+              <option value="">👤 Tất cả Lãnh đạo Ban</option>
+            </select>
+          </div>
+          <div class="sync-status">
+            <span class="dot-live"></span>
+            <span>API đồng bộ lúc: <strong id="apiUpdatedTime">Đang kết nối...</strong></span>
+          </div>
+        </div>
+
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th rowspan="2" style="width: 50px;">Số TT</th>
+                <th rowspan="2" style="min-width: 220px;">Tên dự án/công trình</th>
+                <th rowspan="2" style="min-width: 180px;">Chủ đầu tư dự án</th>
+                <th rowspan="2" style="min-width: 150px;">QĐ phê duyệt dự án</th>
+                <th rowspan="2" style="width: 120px;">Tổng mức đầu tư<br>(tỷ đồng)</th>
+                <th rowspan="2" style="width: 130px;">Tiến độ dự án<br>được duyệt</th>
+                <th colspan="2">Nhiệm vụ được giao theo kết luận tại TB 561-09/6/2026 và TB 690-13/7/2026</th>
+                <th rowspan="2" style="min-width: 300px;">Kết quả thực hiện theo nhiệm vụ được giao tại các Thông báo của UBND thành phố</th>
+                <th rowspan="2" style="min-width: 280px;">Các vướng mắc, khó khăn</th>
+                <th rowspan="2" style="min-width: 280px;">Đề xuất xử lý</th>
+                <th rowspan="2" style="min-width: 150px;">Lãnh đạo Ban</th>
+              </tr>
+              <tr>
+                <th style="min-width: 280px;">Nội dung nhiệm vụ</th>
+                <th style="width: 130px;">Thời hạn xử lý</th>
+              </tr>
+            </thead>
+            <tbody id="tableBody">
+              <tr>
+                <td colspan="12" class="text-center" style="padding: 30px; color: #64748b;">
+                  ⏳ Đang tải dữ liệu từ Google Sheets API...
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </main>
 
-
-
-    <!-- ===================================================
-         FOOTER
-    ==================================================== -->
+    <!-- FOOTER -->
     <footer class="footer">
-
       BAN QUẢN LÝ DỰ ÁN ĐẦU TƯ XÂY DỰNG CÁC CÔNG TRÌNH GIAO THÔNG VÀ NÔNG NGHIỆP ĐÀ NẴNG
       &nbsp;·&nbsp;
-      HỆ THỐNG BÁO CÁO DỰ ÁN TRỌNG ĐIỂM
+      TỔNG HỢP KÉO DÀI LÃNG PHÍ (TB 561 &amp; TB 690)
       &nbsp;·&nbsp;
       NĂM 2026
-
     </footer>
-
 
   </div>
 
-
-
-  <!-- =====================================================
-       DATE
-  ====================================================== -->
+  <!-- JAVASCRIPT XỬ LÝ API & HIỂN THỊ -->
   <script>
+    const API_URL = "https://script.google.com/macros/s/AKfycbzyseqMSkG9fnWyEAlzOOyeRivUUNXkmSws8lWatERo8bXGS_VuMpEpt50rx3aVW3iodw/exec";
+    let allData = [];
 
-    document.addEventListener(
-      "DOMContentLoaded",
-      function () {
+    const formatNumber = (val) => Number(val || 0).toLocaleString("vi-VN", { maximumFractionDigits: 3 });
 
-        const now = new Date();
-
-        const options = {
+    document.addEventListener("DOMContentLoaded", function () {
+      const now = new Date();
+      const dateElement = document.getElementById("currentDate");
+      if (dateElement) {
+        dateElement.textContent = now.toLocaleDateString("vi-VN", {
           day: "2-digit",
           month: "2-digit",
           year: "numeric"
-        };
-
-        const dateElement =
-          document.getElementById("currentDate");
-
-        if (dateElement) {
-
-          dateElement.textContent =
-            now.toLocaleDateString(
-              "vi-VN",
-              options
-            );
-
-        }
-
+        });
       }
-    );
 
+      fetch(API_URL)
+        .then(response => response.json())
+        .then(res => {
+          if (res.status === "success") {
+            allData = res.data || [];
+            document.getElementById("apiUpdatedTime").textContent = res.updatedAt || "Vừa xong";
+            populateLeaderFilter(allData);
+            updateKPIs(allData);
+            renderTable(allData);
+          } else {
+            throw new Error(res.message || "Lỗi phản hồi từ Apps Script");
+          }
+        })
+        .catch(err => {
+          document.getElementById("apiUpdatedTime").textContent = "Lỗi kết nối";
+          document.getElementById("tableBody").innerHTML = `
+            <tr>
+              <td colspan="12" class="text-center" style="padding: 25px; color: #dc2626; font-weight: 600;">
+                ❌ Không thể tải dữ liệu: ${err.message}. Vui lòng kiểm tra lại Apps Script.
+              </td>
+            </tr>`;
+        });
+
+      document.getElementById("searchInput").addEventListener("input", applyFilters);
+      document.getElementById("leaderFilter").addEventListener("change", applyFilters);
+    });
+
+    function populateLeaderFilter(data) {
+      const select = document.getElementById("leaderFilter");
+      const leaders = [...new Set(data.map(item => (item.lanhDaoBan || "").trim()).filter(Boolean))];
+      leaders.forEach(leader => {
+        const opt = document.createElement("option");
+        opt.value = leader;
+        opt.textContent = leader;
+        select.appendChild(opt);
+      });
+    }
+
+    function applyFilters() {
+      const kw = document.getElementById("searchInput").value.toLowerCase().trim();
+      const selectedLeader = document.getElementById("leaderFilter").value;
+
+      const filtered = allData.filter(item => {
+        const matchLeader = !selectedLeader || (item.lanhDaoBan && item.lanhDaoBan.trim() === selectedLeader);
+        const matchKw = !kw || (
+          (item.tenDuAn && item.tenDuAn.toLowerCase().includes(kw)) ||
+          (item.chuDauTu && item.chuDauTu.toLowerCase().includes(kw)) ||
+          (item.noiDungNhiemVu && item.noiDungNhiemVu.toLowerCase().includes(kw)) ||
+          (item.ketQuaThucHien && item.ketQuaThucHien.toLowerCase().includes(kw)) ||
+          (item.vuongMac && item.vuongMac.toLowerCase().includes(kw)) ||
+          (item.deXuatXuLy && item.deXuatXuLy.toLowerCase().includes(kw)) ||
+          (item.lanhDaoBan && item.lanhDaoBan.toLowerCase().includes(kw))
+        );
+        return matchLeader && matchKw;
+      });
+
+      updateKPIs(filtered);
+      renderTable(filtered);
+    }
+
+    function updateKPIs(data) {
+      const totalTMDT = data.reduce((sum, item) => sum + (Number(item.tongMucDauTu) || 0), 0);
+      const countVuongMac = data.filter(item => item.vuongMac && item.vuongMac.toString().trim() !== "").length;
+      const uniqueLeaders = new Set(data.map(item => (item.lanhDaoBan || "").trim()).filter(Boolean)).size;
+
+      document.getElementById("kpi-total").textContent = data.length;
+      document.getElementById("kpi-tmdt").textContent = formatNumber(totalTMDT);
+      document.getElementById("kpi-vuongmac").textContent = `${countVuongMac} / ${data.length}`;
+      document.getElementById("kpi-leaders").textContent = uniqueLeaders;
+    }
+
+    function renderTable(data) {
+      const tbody = document.getElementById("tableBody");
+      if (!data.length) {
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="12" class="text-center" style="padding: 25px; color: #64748b;">
+              Không tìm thấy dữ liệu dự án phù hợp.
+            </td>
+          </tr>`;
+        return;
+      }
+
+      tbody.innerHTML = data.map((row, idx) => `
+        <tr>
+          <td class="text-center">${row.stt || idx + 1}</td>
+          <td class="font-bold" style="color: #0661B6;">${row.tenDuAn || ""}</td>
+          <td>${row.chuDauTu || ""}</td>
+          <td>${row.qdPheDuyet || ""}</td>
+          <td class="text-right font-bold">${formatNumber(row.tongMucDauTu)}</td>
+          <td class="text-center">${row.tienDoDuocDuyet || ""}</td>
+          <td>${row.noiDungNhiemVu || ""}</td>
+          <td class="text-center font-bold" style="color: #d97706;">${row.thoiHanXuLy || ""}</td>
+          <td>${row.ketQuaThucHien || ""}</td>
+          <td style="color: #dc2626;">${row.vuongMac || ""}</td>
+          <td style="color: #16a34a;">${row.deXuatXuLy || ""}</td>
+          <td class="text-center">
+            ${row.lanhDaoBan ? `<span class="tag-leader">${row.lanhDaoBan}</span>` : ""}
+          </td>
+        </tr>
+      `).join("");
+    }
   </script>
-
-
 </body>
 </html>
